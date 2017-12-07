@@ -1,0 +1,36 @@
+spring:
+#  profiles:
+#    active: dev
+  jpa:
+    database: POSTGRESQL
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        enable_lazy_load_no_trans: false
+      database-platform: org.hibernate.dialect.PostgreSQL9Dialect
+  datasource :
+    platform: postgres
+    url: jdbc:postgresql://localhost:5432/drapp
+    username: postgres
+    password: admin
+    driverClassName: org.postgresql.Driver
+  data:
+    mongodb.host: localhost
+    mongodb.port: 27017
+    mongodb.uri: mongodb://localhost/ptt
+    mongo.repositories.enabled: true
+app:
+  name: anuglar2-spring-jwt
+
+jwt:
+  header: Authorization
+  expires_in: 600 # 10 minutes
+  secret: queenvictoria
+  cookie: AUTH-TOKEN
+
+logging:
+  level:
+    org.springframework.web: ERROR
+    com.bfwg: DEBUG
