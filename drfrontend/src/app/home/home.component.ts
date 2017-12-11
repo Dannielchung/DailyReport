@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {
-  FooService,
   ConfigService,
+  FooService,
   UserService
 } from '../service';
 

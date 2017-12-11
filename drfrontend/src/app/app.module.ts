@@ -1,46 +1,66 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, APP_INITIALIZER} from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
-import { HttpClientModule } from '@angular/common/http';
-// material
+import { APP_INITIALIZER, NgModule } from '@angular/core';
+import { AdminGuard, GuestGuard, LoginGuard } from './guard';
 import {
-  MatButtonModule,
-  MatMenuModule,
-  MatIconModule,
-  MatToolbarModule,
-  MatTooltipModule,
-  MatCardModule,
-  MatInputModule,
-  MatIconRegistry,
-  MatProgressSpinnerModule
-} from '@angular/material';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FlexLayoutModule } from '@angular/flex-layout';
-import { AppComponent } from './app.component';
-import { AppRoutingModule } from './app-routing.module';
-import { HomeComponent } from './home';
-import { LoginComponent } from './login';
-import { LoginGuard, GuestGuard, AdminGuard } from './guard';
-import { NotFoundComponent } from './not-found';
-import { AccountMenuComponent } from './component/header/account-menu/account-menu.component';
-import {
-  HeaderComponent,
   ApiCardComponent,
   FooterComponent,
-  GithubComponent
+  GithubComponent,
+  HeaderComponent
 } from './component';
-
 import {
   ApiService,
   AuthService,
-  UserService,
+  ConfigService,
   FooService,
-  ConfigService
+  PttService,
+  UserService
 } from './service';
-import { ChangePasswordComponent } from './change-password/change-password.component';
-import { ForbiddenComponent } from './forbidden/forbidden.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {
+  MatButtonModule,
+  MatCardModule,
+  MatIconModule,
+  MatIconRegistry,
+  MatInputModule,
+  MatMenuModule,
+  MatProgressSpinnerModule,
+  MatToolbarModule,
+  MatTooltipModule
+} from '@angular/material';
+
+import { AccountMenuComponent } from './component/header/account-menu/account-menu.component';
 import { AdminComponent } from './admin/admin.component';
+import { AppComponent } from './app.component';
+import { AppRoutingModule } from './app-routing.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BrowserModule } from '@angular/platform-browser';
+import { ChangePasswordComponent } from './change-password/change-password.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { FoodSearchComponent } from './food-search/food-search.component';
+import { ForbiddenComponent } from './forbidden/forbidden.component';
+import { HomeComponent } from './home';
+import { HttpClientModule } from '@angular/common/http';
+import { HttpModule } from '@angular/http';
+import { LoginComponent } from './login';
+import { NotFoundComponent } from './not-found';
+
+// material
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 export function initUserFactory(userService: UserService) {
     return () => userService.initUser();
@@ -58,6 +78,7 @@ export function initUserFactory(userService: UserService) {
     NotFoundComponent,
     AccountMenuComponent,
     ChangePasswordComponent,
+    FoodSearchComponent,
     ForbiddenComponent,
     AdminComponent
   ],
@@ -88,6 +109,7 @@ export function initUserFactory(userService: UserService) {
     ApiService,
     UserService,
     ConfigService,
+    PttService,
     MatIconRegistry,
     {
       'provide': APP_INITIALIZER,

@@ -1,0 +1,18 @@
+<div class="content"
+     fxLayout="row"
+     fxLayoutAlign="center">
+  <table class="table">
+    <tr>
+      <th>Title</th>
+      <th>Author</th>
+      <th>Date</th>
+      <th>Score</th>
+    </tr>
+    <tr *ngFor="let food of foods; let i = index" >
+      <td>{{food.title}}</td>
+      <td>{{food.author}}</td>
+      <td>{{food.date}}</td>
+      <td>{{food.score}}</td>
+    </tr>
+  </table>
+</div>

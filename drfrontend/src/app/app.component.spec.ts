@@ -1,34 +1,31 @@
-import { TestBed, async } from '@angular/core/testing';
-import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { RouterTestingModule } from '@angular/router/testing';
-import { AppComponent } from './app.component';
-import { HomeComponent } from './home';
-import { LoginComponent } from './login';
-import { MockApiService } from './service/mocks/api.service.mock';
-
-import { LoginGuard } from './guard';
-import { NotFoundComponent } from './not-found';
 import {
   ApiCardComponent,
   FooterComponent,
   GithubComponent,
 } from './component';
-
-import {
-  MatToolbarModule,
-  MatIconRegistry
-} from '@angular/material';
-
-
 import {
   ApiService,
   AuthService,
-  UserService,
+  ConfigService,
   FooService,
-  ConfigService
+  PttService,
+  UserService
 } from './service';
-
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {
+  MatIconRegistry,
+  MatToolbarModule
+} from '@angular/material';
+import { TestBed, async } from '@angular/core/testing';
+
+import { AppComponent } from './app.component';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { HomeComponent } from './home';
+import { LoginComponent } from './login';
+import { LoginGuard } from './guard';
+import { MockApiService } from './service/mocks/api.service.mock';
+import { NotFoundComponent } from './not-found';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -50,7 +47,8 @@ describe('AppComponent', () => {
         AuthService,
         UserService,
         FooService,
-        ConfigService
+        ConfigService,
+        PttService
       ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA]
     }).compileComponents();

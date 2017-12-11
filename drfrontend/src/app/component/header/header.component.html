@@ -1,20 +1,30 @@
 <mat-toolbar color="primary" class="app-navbar">
     <button mat-button mat-ripple routerLink="/">
-    <img alt="Angular-Spring-Starter" class="app-angular-logo" src="assets/image/angular-white-transparent.svg">
-    <span>Daily Report</span>
-  </button>
-
+        <img alt="Angular-Spring-Starter" class="app-angular-logo" src="assets/image/angular-white-transparent.svg">
+        <span>Daily Report</span>
+    </button>
+    <div class="left" *ngIf="hasSignedIn()">
+        <div fxFlex="1 1 auto" fxLayout="row" fxLayoutAlign="flex-end center">
+            <button class="greeting-button" *ngIf="hasSignedIn()" mat-button mat-ripple [matMenuTriggerFor]="foodMenu">
+                <span>探索</span>
+            </button>
+            <mat-menu #foodMenu class="app-header-accountMenu" yposition="below" [overlapTrigger]="false">
+                <button mat-menu-item [routerLink]="['/food-search']">TOP TEN FOOD</button>
+                <button mat-menu-item [routerLink]="['/ptt-board']">PTT BOARD</button>
+            </mat-menu>
+        </div>
+    </div>
     <div class="right">
         <div fxFlex="1 1 auto" fxLayout="row" fxLayoutAlign="flex-end center">
             <button *ngIf="!hasSignedIn()" routerLink="/login" mat-button mat-ripple>
-        <span>Login</span>
-      </button>
+                <span>Login</span>
+            </button>
             <button class="greeting-button" *ngIf="hasSignedIn()" mat-button mat-ripple [matMenuTriggerFor]="accountMenu">
-        <span>Aloha, {{userName()}}</span>
-      </button>
+                <span>Aloha, {{userName()}}</span>
+            </button>
             <button class="greeting-hamburger" *ngIf="hasSignedIn()" mat-icon-button mat-ripple [matMenuTriggerFor]="accountMenu">
-        <mat-icon>menu</mat-icon>
-      </button>
+                <mat-icon>menu</mat-icon>
+            </button>
             <mat-menu #accountMenu class="app-header-accountMenu" yposition="below" [overlapTrigger]="false">
                 <app-account-menu></app-account-menu>
             </mat-menu>

@@ -1,3 +1,5 @@
+
+
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
@@ -8,8 +10,8 @@ import { LoginGuard } from './guard';
 import { GuestGuard, AdminGuard } from './guard';
 import { NotFoundComponent } from './not-found';
 import { ChangePasswordComponent } from './change-password';
+import { FoodSearchComponent } from './food-search';
 import { ForbiddenComponent } from './forbidden';
-
 export const routes: Routes = [
   {
     path: '',
@@ -20,6 +22,11 @@ export const routes: Routes = [
     path: 'login',
     component: LoginComponent,
     canActivate: [GuestGuard]
+  },
+  {
+    path: 'food-search',
+    component: FoodSearchComponent,
+    canActivate: [LoginGuard]
   },
   {
     path: 'change-password',
