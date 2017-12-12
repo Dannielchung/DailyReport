@@ -30,7 +30,7 @@ export class FoodSearchComponent implements OnInit {
     // show me the animation
     .delay(1000)
     .subscribe((resp) => {
-      this.foods = resp.slice(5);
+      this.foods = resp.slice(0);
     }, error => {
       this.notification = { msgType: 'error', msgBody: 'Invalid old password.'};
     });

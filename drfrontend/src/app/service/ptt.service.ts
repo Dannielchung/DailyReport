@@ -12,6 +12,6 @@ export class PttService {
   ) { }
 
   getPttFoods() {
-    return this.apiService.get('/api/ptt/Food');
+    return this.apiService.get('/api/ptt/top-ten/food');
   }
 }

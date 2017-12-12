@@ -21,25 +21,28 @@ public class Ptt implements Serializable {
 	private String board;
 	private String title;
 	private String author;
-	private String idcontent;
+	private String content;
 	private String ip;
 	private String url;
 	private Date updatetime;
 	private Date date;
+	private Integer score;
 	Set<Comment> comments;
 	
-	public Ptt(String id, String board, String title, String author, String idcontent, String ip, String url,
-			Date updatetime, Date date, Set<Comment> comments) {
+
+	public Ptt(String id, String board, String title, String author, String content, String ip, String url,
+			Date updatetime, Date date, Integer score, Set<Comment> comments) {
 		super();
 		this.id = id;
 		this.board = board;
 		this.title = title;
 		this.author = author;
-		this.idcontent = idcontent;
+		this.content = content;
 		this.ip = ip;
 		this.url = url;
 		this.updatetime = updatetime;
 		this.date = date;
+		this.score = score;
 		this.comments = comments;
 	}
 
@@ -73,14 +76,6 @@ public class Ptt implements Serializable {
 
 	public void setAuthor(String author) {
 		this.author = author;
-	}
-
-	public String getIdcontent() {
-		return idcontent;
-	}
-
-	public void setIdcontent(String idcontent) {
-		this.idcontent = idcontent;
 	}
 
 	public String getIp() {
@@ -122,5 +117,21 @@ public class Ptt implements Serializable {
 	public void setComments(Set<Comment> comments) {
 		this.comments = comments;
 	}
-	
+
+	public String getContent() {
+		return content;
+	}
+
+	public void setContent(String content) {
+		this.content = content;
+	}
+
+	public Integer getScore() {
+		return score;
+	}
+
+	public void setScore(Integer score) {
+		this.score = score;
+	}
+
 }

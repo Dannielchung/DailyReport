@@ -7,12 +7,15 @@
       <th>Author</th>
       <th>Date</th>
       <th>Score</th>
+       <th>Content</th>
     </tr>
     <tr *ngFor="let food of foods; let i = index" >
+
       <td>{{food.title}}</td>
       <td>{{food.author}}</td>
       <td>{{food.date}}</td>
-      <td>{{food.score}}</td>
+       <td>{{food.score}}</td>
+        <td>{{food.content}}</td>
     </tr>
   </table>
 </div>
