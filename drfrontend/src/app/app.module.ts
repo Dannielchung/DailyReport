@@ -28,6 +28,7 @@ import {
 } from '@angular/material';
 
 import { AccountMenuComponent } from './component/header/account-menu/account-menu.component';
+import { TimesComponent } from './component/header/times/times.component';
 import { AdminComponent } from './admin/admin.component';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -77,6 +78,7 @@ export function initUserFactory(userService: UserService) {
     LoginComponent,
     NotFoundComponent,
     AccountMenuComponent,
+    TimesComponent,
     ChangePasswordComponent,
     FoodSearchComponent,
     ForbiddenComponent,

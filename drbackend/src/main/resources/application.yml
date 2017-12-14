@@ -19,7 +19,7 @@ spring:
   data:
     mongodb.host: localhost
     mongodb.port: 27017
-    mongodb.uri: mongodb://localhost/ptt
+    mongodb.uri: mongodb://localhost/ptt2
     mongo.repositories.enabled: true
 app:
   name: anuglar2-spring-jwt

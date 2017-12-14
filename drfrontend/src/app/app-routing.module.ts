@@ -25,6 +25,7 @@ export const routes: Routes = [
   },
   {
     path: 'food-search',
+    // loadChildren: 'food-search/food-search.module#FoodSearchModule',
     component: FoodSearchComponent,
     canActivate: [LoginGuard]
   },

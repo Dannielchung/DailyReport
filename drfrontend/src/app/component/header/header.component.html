@@ -15,6 +15,7 @@
         </div>
     </div>
     <div class="right">
+        <app-times *ngIf="hasSignedIn()"></app-times>
         <div fxFlex="1 1 auto" fxLayout="row" fxLayoutAlign="flex-end center">
             <button *ngIf="!hasSignedIn()" routerLink="/login" mat-button mat-ripple>
                 <span>Login</span>
