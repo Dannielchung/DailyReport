@@ -11,7 +11,7 @@ export class TimesService {
   nowTime$: Observable<any>;
   displayTime$: Observable<any>;
   // Length ms
-  TimeOut = 120000;
+  TimeOut = 990000000;
   // Interval ms
   TimeGap = 1000;
   CurrentTime = ( new Date() ).getTime();

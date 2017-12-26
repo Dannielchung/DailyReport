@@ -6,11 +6,11 @@
     <div class="left" *ngIf="hasSignedIn()">
         <div fxFlex="1 1 auto" fxLayout="row" fxLayoutAlign="flex-end center">
             <button class="greeting-button" *ngIf="hasSignedIn()" mat-button mat-ripple [matMenuTriggerFor]="foodMenu">
-                <span>探索</span>
+                <span>食物探索</span>
             </button>
             <mat-menu #foodMenu class="app-header-accountMenu" yposition="below" [overlapTrigger]="false">
-                <button mat-menu-item [routerLink]="['/food-search']">TOP TEN FOOD</button>
-                <button mat-menu-item [routerLink]="['/ptt-board']">PTT BOARD</button>
+                <button mat-menu-item [routerLink]="['/food-search']">PTT Top Ten</button>
+                <button mat-menu-item [routerLink]="['/area-food-search']">Instagram Area</button>
             </mat-menu>
         </div>
     </div>
