@@ -28,7 +28,6 @@ import {
 } from '@angular/material';
 
 import { AccountMenuComponent } from './component/header/account-menu/account-menu.component';
-import { TimesComponent } from './component/header/times/times.component';
 import { AdminComponent } from './admin/admin.component';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -36,6 +35,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
 import { ChangePasswordComponent } from './change-password/change-password.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { FoodAreaComponent } from './food-area/food-area.component';
 import { FoodSearchComponent } from './food-search/food-search.component';
 import { ForbiddenComponent } from './forbidden/forbidden.component';
 import { HomeComponent } from './home';
@@ -43,6 +43,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 import { LoginComponent } from './login';
 import { NotFoundComponent } from './not-found';
+import { TimesComponent } from './component/header/times/times.component';
 
 // material
 
@@ -82,7 +83,8 @@ export function initUserFactory(userService: UserService) {
     ChangePasswordComponent,
     FoodSearchComponent,
     ForbiddenComponent,
-    AdminComponent
+    AdminComponent,
+    FoodAreaComponent
   ],
   imports: [
     BrowserAnimationsModule,

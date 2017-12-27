@@ -1,17 +1,18 @@
+import { AdminGuard, GuestGuard } from './guard';
+import { RouterModule, Routes } from '@angular/router';
 
-
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { AppComponent } from './app.component';
-import { HomeComponent } from './home';
-import { LoginComponent } from './login';
 import { AdminComponent } from './admin';
-import { LoginGuard } from './guard';
-import { GuestGuard, AdminGuard } from './guard';
-import { NotFoundComponent } from './not-found';
+import { AppComponent } from './app.component';
 import { ChangePasswordComponent } from './change-password';
+import { FoodAreaComponent } from './food-area';
 import { FoodSearchComponent } from './food-search';
 import { ForbiddenComponent } from './forbidden';
+import { HomeComponent } from './home';
+import { LoginComponent } from './login';
+import { LoginGuard } from './guard';
+import { NgModule } from '@angular/core';
+import { NotFoundComponent } from './not-found';
+
 export const routes: Routes = [
   {
     path: '',
@@ -22,6 +23,12 @@ export const routes: Routes = [
     path: 'login',
     component: LoginComponent,
     canActivate: [GuestGuard]
+  },
+  {
+    path: 'area-food-search',
+    // loadChildren: 'food-search/food-search.module#FoodSearchModule',
+    component: FoodAreaComponent,
+    canActivate: [LoginGuard]
   },
   {
     path: 'food-search',
@@ -55,7 +62,7 @@ export const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule],
+exports: [RouterModule],
   providers: []
 })
 export class AppRoutingModule { }
