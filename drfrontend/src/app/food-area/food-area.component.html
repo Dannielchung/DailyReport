@@ -1,5 +1,10 @@
-<select id="area-select"
-        name="area-select"></select>
+
 <div class="panel">
-  <canvas id="cloud"></canvas>
+  <select (change)="onChange($event)">
+      <option *ngFor="let cloud of clouds" [value]="cloud.name">{{ cloud.name }}</option>
+  </select>
+  <p></p>
+  <!-- {{ selectedItem }} -->
+  <canvas id="cloud" class="canvas" width="940" height="611"></canvas>
+
 </div>

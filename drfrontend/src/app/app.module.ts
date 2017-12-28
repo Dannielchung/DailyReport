@@ -11,6 +11,7 @@ import {
   AuthService,
   ConfigService,
   FooService,
+  InstagramService,
   PttService,
   UserService
 } from './service';
@@ -114,6 +115,7 @@ export function initUserFactory(userService: UserService) {
     UserService,
     ConfigService,
     PttService,
+    InstagramService,
     MatIconRegistry,
     {
       'provide': APP_INITIALIZER,

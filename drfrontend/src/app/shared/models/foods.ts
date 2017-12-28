@@ -16,3 +16,8 @@ export interface Comment {
   content: string;
   score: number;
 }
+
+export interface Area {
+  id: number,
+  name: string
+}

@@ -1,6 +1,6 @@
 import { RouterModule, Routes } from '@angular/router';
 
-import { FoodSearchComponent } from './food-search.component';
+import { FoodAreaComponent } from './food-area.component';
 import { ForbiddenComponent } from '../forbidden';
 import { NgModule } from '@angular/core';
 import { NotFoundComponent } from '../not-found';
@@ -8,7 +8,7 @@ import { NotFoundComponent } from '../not-found';
 export const routes: Routes = [
   {
     path: '',
-    component: FoodSearchComponent,
+    component: FoodAreaComponent,
     children:
     [
       // {path: 'list', component: ListComponent},

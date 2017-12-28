@@ -21,6 +21,7 @@ import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { HomeComponent } from './home';
+import { InstagramService } from './service/instagram.service';
 import { LoginComponent } from './login';
 import { LoginGuard } from './guard';
 import { MockApiService } from './service/mocks/api.service.mock';
@@ -48,7 +49,8 @@ describe('AppComponent', () => {
         UserService,
         FooService,
         ConfigService,
-        PttService
+        PttService,
+        InstagramService
       ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA]
     }).compileComponents();
