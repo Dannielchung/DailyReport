@@ -13,7 +13,18 @@ import { delay } from 'rxjs/operators';
 })
 export class FoodAreaComponent implements OnInit {
   scores = {};
-  scorelist = {list: []};
+  scorelist = {
+    list: [],
+    gridSize: 1,
+    // weightFactor: 3,
+    fontFamily: 'Average, Times, serif',
+    color: 'random-dark',
+    // backgroundColor: '#333',
+    rotateRatio: 0.1,
+    rotationSteps: 2,
+    ellipticity: 1,
+    shuffle: false,
+  };
   selectedItem = '大同區';
 
   clouds: Area[] = [
@@ -73,7 +84,6 @@ export class FoodAreaComponent implements OnInit {
     this.selectedItem = (<HTMLSelectElement>event.target).value;
     const s = document.createElement('script');
     s.type = 'text/javascript';
-    console.log('WordCloud(document.getElementById(\'cloud\'),' + JSON.stringify(this.scorelist) + ')');
     s.innerHTML = 'WordCloud(document.getElementById(\'cloud\'),' + JSON.stringify(this.scorelist) + ')';
     this.el.nativeElement.appendChild(s);
   }
@@ -85,6 +95,8 @@ export class FoodAreaComponent implements OnInit {
 getAreaScores() {
     console.log(this.selectedItem)
     this.scorelist['list'] = [];
+    // this.scorelist['fontCSS'] = 'https://fonts.googleapis.com/css?family=Finger+Paint';
+
     this.instagramService.getInstagramScores(this.selectedItem)
     // show me the animation
     .delay(1000)
